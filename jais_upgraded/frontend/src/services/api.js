@@ -1,0 +1,13 @@
+import axios from 'axios';
+const api = axios.create({ baseURL: process.env.REACT_APP_API_URL || 'http://localhost:8000' });
+export const uploadJudgment          = (file, onProgress) => { const fd = new FormData(); fd.append('file', file); return api.post('/api/judgment/upload', fd, { headers:{'Content-Type':'multipart/form-data'}, onUploadProgress: e => onProgress && onProgress(Math.round(e.loaded*100/e.total)) }); };
+export const loadDemo                = ()    => api.post('/api/judgment/demo/load');
+export const getJudgment             = id   => api.get(`/api/judgment/${id}`);
+export const listJudgments           = ()    => api.get('/api/judgment/');
+export const getActions              = id   => api.get(`/api/actions/judgment/${id}`);
+export const verifyAction            = (id,body) => api.post(`/api/actions/${id}/verify`, body);
+export const getAuditTrail           = id   => api.get(`/api/audit/${id}`);
+export const getDashboardSummary     = ()    => api.get('/api/dashboard/summary');
+export const askJudgment             = (id,q) => api.post(`/api/judgment/${id}/ask`, { question: q });
+export const getAnomalies            = id   => api.get(`/api/judgment/${id}/anomalies`);
+export const getCompliancePredictions = id  => api.get(`/api/judgment/${id}/compliance-predictions`);
