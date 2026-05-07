@@ -168,7 +168,7 @@ export default function DashboardPage({ user, onLogout }) {
             {/* What should I do? — Gap #5 decision view */}
             <div style={{ background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:12, overflow:'hidden' }}>
               <div className="panel-header">
-                <span className="panel-title">🎯 What Should I Do? — Decision Summary</span>
+                <span className="panel-title">🎯 Decision Summary</span>
                 <span className="tag tag-amber">For Government Officials</span>
               </div>
               <div style={{ padding:14 }}>

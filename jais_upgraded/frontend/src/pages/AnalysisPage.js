@@ -333,7 +333,7 @@ export default function AnalysisPage({ user, onLogout }) {
             borderRadius:12, overflow:'hidden', display:'flex', flexDirection:'column' }}>
 
             <div className="panel-header">
-              <span className="panel-title">✅ Action Plans — Human Verification</span>
+              <span className="panel-title"> Action Plans — Human Verification</span>
               <div style={{ display:'flex', gap:4 }}>
                 {[['all','All'], ['pending','Pending'], ['approved','Approved'], ['rejected','Rejected']].map(([k,l]) => (
                   <button key={k} onClick={() => setFilter(k)} style={{
